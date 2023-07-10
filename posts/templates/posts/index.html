@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load meusfiltros %}
 
 {% block conteudo %}
 <!-- CONTENT -->
@@ -23,7 +24,7 @@
                         </h5>
                         <p class="card-text">{{ post.excerto_post }}</p>
                         <p class="card-text">
-                            <small class="text-muted">{{ post.data_post|naturalday|title }} | {{ post.comentario_set.count }} comentario(s) | {{ post.categoria_post }}</small>
+                            <small class="text-muted">{{ post.data_post|naturalday|title }} | {{ post.comentario_set.count|plural_comentarios }} | {{ post.categoria_post }}</small>
                         </p>
 
                         <div class="text-right">
